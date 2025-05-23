@@ -1,37 +1,52 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { Progress } from './ui/progress';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeSkill, setActiveSkill] = useState<string | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const skills = [
-    { name: 'HTML/CSS', level: 95, color: 'from-orange-400 to-red-500' },
-    { name: 'JavaScript', level: 90, color: 'from-yellow-400 to-yellow-600' },
-    { name: 'React', level: 88, color: 'from-blue-400 to-blue-600' },
-    { name: 'Node.js', level: 85, color: 'from-green-400 to-green-600' },
-    { name: 'Python', level: 82, color: 'from-blue-500 to-blue-700' },
-    { name: 'MongoDB', level: 80, color: 'from-green-500 to-green-700' },
-    { name: 'PostgreSQL', level: 78, color: 'from-blue-600 to-indigo-600' },
-    { name: 'AWS', level: 75, color: 'from-orange-500 to-orange-700' },
-    { name: 'Docker', level: 70, color: 'from-blue-400 to-blue-500' },
-    { name: 'TypeScript', level: 85, color: 'from-blue-500 to-blue-600' },
+    { name: 'HTML/CSS', level: 95, color: 'from-orange-400 to-red-500', description: 'Expert in responsive design, animations, and modern CSS frameworks' },
+    { name: 'JavaScript', level: 90, color: 'from-yellow-400 to-yellow-600', description: 'Proficient in ES6+, async programming, and DOM manipulation' },
+    { name: 'React', level: 88, color: 'from-blue-400 to-blue-600', description: 'Advanced state management, hooks, context API, and performance optimization' },
+    { name: 'Node.js', level: 85, color: 'from-green-400 to-green-600', description: 'RESTful APIs, authentication, middleware, and Express.js' },
+    { name: 'MongoDB', level: 82, color: 'from-green-500 to-green-700', description: 'Schema design, aggregation pipelines, and data modeling' },
+    { name: 'TypeScript', level: 85, color: 'from-blue-500 to-blue-600', description: 'Type systems, interfaces, generics, and advanced patterns' },
+    { name: 'Redux', level: 78, color: 'from-purple-400 to-purple-600', description: 'State management, reducers, actions, and middleware' },
+    { name: 'GraphQL', level: 75, color: 'from-pink-500 to-purple-500', description: 'Queries, mutations, subscriptions, and Apollo Client' },
+    { name: 'AWS', level: 75, color: 'from-orange-500 to-orange-700', description: 'S3, Lambda, EC2, and CloudFront deployment' },
+    { name: 'Docker', level: 70, color: 'from-blue-400 to-blue-500', description: 'Containerization, Docker Compose, and orchestration' },
   ];
 
   const tools = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'JavaScript', icon: '💛' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'AWS', icon: '☁️' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Git', icon: '📝' },
-    { name: 'VS Code', icon: '💻' },
-    { name: 'Figma', icon: '🎨' },
-    { name: 'Tailwind', icon: '💨' },
+    { name: 'React', icon: '⚛️', proficiency: 'Expert' },
+    { name: 'Node.js', icon: '🟢', proficiency: 'Advanced' },
+    { name: 'Express', icon: '🚂', proficiency: 'Advanced' },
+    { name: 'MongoDB', icon: '🍃', proficiency: 'Advanced' },
+    { name: 'JavaScript', icon: '💛', proficiency: 'Expert' },
+    { name: 'Python', icon: '🐍', proficiency: 'Intermediate' },
+    { name: 'PostgreSQL', icon: '🐘', proficiency: 'Intermediate' },
+    { name: 'AWS', icon: '☁️', proficiency: 'Advanced' },
+    { name: 'Docker', icon: '🐳', proficiency: 'Intermediate' },
+    { name: 'Git', icon: '📝', proficiency: 'Expert' },
+    { name: 'VS Code', icon: '💻', proficiency: 'Expert' },
+    { name: 'Figma', icon: '🎨', proficiency: 'Intermediate' },
+    { name: 'Postman', icon: '🚀', proficiency: 'Advanced' },
+    { name: 'Redux', icon: '🔄', proficiency: 'Advanced' },
+    { name: 'TypeScript', icon: '🔷', proficiency: 'Advanced' },
   ];
+
+  const projects = {
+    'React': 23,
+    'Node.js': 18,
+    'MongoDB': 15,
+    'JavaScript': 31,
+    'TypeScript': 14,
+    'Docker': 8,
+    'AWS': 12
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -54,6 +69,14 @@ const Skills = () => {
     };
   }, []);
 
+  const handleSkillHover = (skillName: string) => {
+    setActiveSkill(skillName);
+  };
+
+  const handleSkillLeave = () => {
+    setActiveSkill(null);
+  };
+
   return (
     <section id="skills" ref={sectionRef} className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,11 +92,21 @@ const Skills = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Skills Progress Bars */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
               Technical Proficiency
+              {activeSkill && (
+                <span className="ml-2 text-sm font-normal text-gray-500 dark:text-gray-400">
+                  ({projects[activeSkill as keyof typeof projects] || 0} projects)
+                </span>
+              )}
             </h3>
             {skills.map((skill, index) => (
-              <div key={skill.name} className="space-y-2">
+              <div 
+                key={skill.name} 
+                className="space-y-2 hover:bg-white dark:hover:bg-gray-700/50 p-3 rounded-lg transition-all duration-200"
+                onMouseEnter={() => handleSkillHover(skill.name)}
+                onMouseLeave={handleSkillLeave}
+              >
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-medium text-gray-700 dark:text-gray-300">
                     {skill.name}
@@ -91,6 +124,11 @@ const Skills = () => {
                     }}
                   ></div>
                 </div>
+                {activeSkill === skill.name && (
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 animate-fade-in">
+                    {skill.description}
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -100,7 +138,7 @@ const Skills = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Tools & Frameworks
             </h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
               {tools.map((tool, index) => (
                 <div
                   key={tool.name}
@@ -111,10 +149,16 @@ const Skills = () => {
                     animationDelay: `${index * 50}ms`,
                   }}
                 >
-                  <div className="text-2xl mb-2">{tool.icon}</div>
+                  <div className="text-3xl mb-2">{tool.icon}</div>
                   <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                     {tool.name}
                   </p>
+                  <span className={`text-xs px-2 py-1 rounded-full mt-2 inline-block
+                    ${tool.proficiency === 'Expert' ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' : 
+                    tool.proficiency === 'Advanced' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' :
+                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300'}`}>
+                    {tool.proficiency}
+                  </span>
                 </div>
               ))}
             </div>
@@ -123,7 +167,7 @@ const Skills = () => {
 
         {/* Additional Skills Section */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+          <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🎨</span>
             </div>
@@ -132,10 +176,11 @@ const Skills = () => {
             </h4>
             <p className="text-gray-600 dark:text-gray-400">
               Creating responsive, interactive user interfaces with modern frameworks and best practices.
+              <span className="block mt-2 font-medium">35+ projects</span>
             </p>
           </div>
 
-          <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+          <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">⚙️</span>
             </div>
@@ -144,10 +189,11 @@ const Skills = () => {
             </h4>
             <p className="text-gray-600 dark:text-gray-400">
               Building scalable server-side applications, APIs, and database architectures.
+              <span className="block mt-2 font-medium">28+ projects</span>
             </p>
           </div>
 
-          <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center">
+          <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">☁️</span>
             </div>
@@ -156,6 +202,7 @@ const Skills = () => {
             </h4>
             <p className="text-gray-600 dark:text-gray-400">
               Deploying and managing applications using cloud services and modern DevOps practices.
+              <span className="block mt-2 font-medium">19+ projects</span>
             </p>
           </div>
         </div>

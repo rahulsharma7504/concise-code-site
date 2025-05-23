@@ -6,8 +6,19 @@ const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [hoverColor, setHoverColor] = useState('#4338ca');
 
-  const titles = ['Full Stack Developer', 'React Specialist', 'UI/UX Enthusiast', 'Problem Solver'];
+  const titles = ['Full Stack Developer', 'MERN Specialist', 'UI/UX Enthusiast', 'Problem Solver'];
+  
+  // Array of gradient colors to cycle through
+  const gradientColors = [
+    ['from-blue-600 to-purple-600', 'hover:from-blue-700 hover:to-purple-700'],
+    ['from-green-600 to-blue-600', 'hover:from-green-700 hover:to-blue-700'],
+    ['from-purple-600 to-pink-600', 'hover:from-purple-700 hover:to-pink-700'],
+    ['from-red-600 to-orange-600', 'hover:from-red-700 hover:to-orange-700'],
+  ];
+
+  const [currentGradient, setCurrentGradient] = useState(0);
 
   useEffect(() => {
     const currentTitle = titles[currentIndex];
@@ -19,6 +30,9 @@ const Hero = () => {
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
         setCurrentIndex((prev) => (prev + 1) % titles.length);
+        
+        // Change gradient color when changing text
+        setCurrentGradient((prev) => (prev + 1) % gradientColors.length);
       } else {
         setDisplayText(prev => 
           isDeleting 
@@ -38,6 +52,13 @@ const Hero = () => {
     }
   };
 
+  // Random color generator for hover effects
+  const changeHoverColor = () => {
+    const colors = ['#4338ca', '#0891b2', '#7c3aed', '#059669', '#dc2626'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    setHoverColor(randomColor);
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Animation */}
@@ -55,7 +76,11 @@ const Hero = () => {
           <div className="space-y-4">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white">
               Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span 
+                className={`bg-gradient-to-r ${gradientColors[currentGradient][0]} bg-clip-text text-transparent cursor-pointer`}
+                onMouseEnter={changeHoverColor}
+                style={{transition: "all 0.5s ease"}}
+              >
                 John Doe
               </span>
             </h1>
@@ -68,15 +93,15 @@ const Hero = () => {
             </div>
             
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Crafting beautiful, functional, and user-friendly web experiences with modern technologies.
-              Let's build something amazing together.
+              Building powerful web applications with the MERN stack since 2018.
+              Over 50+ projects delivered for clients worldwide. Let's create something amazing together.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => scrollToSection('#contact')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+              className={`bg-gradient-to-r ${gradientColors[currentGradient][0]} ${gradientColors[currentGradient][1]} text-white px-8 py-3 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg`}
             >
               Get In Touch
             </button>
@@ -84,6 +109,7 @@ const Hero = () => {
             <button
               onClick={() => scrollToSection('#projects')}
               className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transform hover:scale-105 transition-all duration-200"
+              style={{borderColor: hoverColor, color: hoverColor}}
             >
               View My Work
             </button>
@@ -95,6 +121,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
+              style={{color: hoverColor}}
             >
               <Github size={24} />
             </a>
@@ -103,12 +130,14 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
+              style={{color: hoverColor}}
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:john@example.com"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
+              style={{color: hoverColor}}
             >
               <Mail size={24} />
             </a>
@@ -119,6 +148,7 @@ const Hero = () => {
           <button
             onClick={() => scrollToSection('#about')}
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            style={{color: hoverColor}}
           >
             <ChevronDown size={32} />
           </button>
