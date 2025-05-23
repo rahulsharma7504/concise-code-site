@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Code, Coffee, Database, Server, Globe, Cpu, WrenchIcon, Github as GithubIcon, MapPin, School } from 'lucide-react';
+import { Code, Coffee, Database, Server, Globe, Award, FileText, Github as GithubIcon, MapPin, School } from 'lucide-react';
 
 const About = () => {
   const randomStats = [
@@ -11,10 +11,10 @@ const About = () => {
   ];
 
   const certifications = [
-    "MongoDB Certified Developer",
-    "React Advanced Patterns",
-    "Node.js Performance",
-    "AI Engineering with OpenAI"
+    "MERN Stack Development",
+    "React Fundamentals",
+    "Node.js & Express",
+    "UI/UX Design Principles"
   ];
 
   return (
@@ -38,15 +38,17 @@ const About = () => {
               </div>
               
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                Hello! I'm Rahul Sharma, a passionate MERN stack developer with hands-on experience building 
-                scalable web applications. I specialize in React, Node, Express, and MongoDB, creating 
-                solutions that combine strong backend logic with pixel-perfect frontend UI.
+                Hello! I'm Rahul Sharma, a dedicated MERN stack developer with hands-on experience building 
+                interactive and responsive web applications. I specialize in creating clean, efficient code 
+                that delivers exceptional user experiences across devices.
               </p>
               
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                With a background in Telematics and a passion for problem-solving, I'm currently exploring 
-                AI-based projects with voice, image, and document processing capabilities. I believe in 
-                clean code, user-centered design, and continuous learning.
+                At Hankernest Technologies, I've developed educational applications that blend 
+                engaging UIs with robust backend systems. My expertise includes React.js for building 
+                interactive interfaces, Node.js and Express for server-side logic, and MongoDB for 
+                efficient data management. I'm passionate about creating applications that are not only 
+                functional but also intuitive and visually appealing.
               </p>
 
               <div className="flex flex-wrap gap-3 mt-6">
@@ -68,7 +70,7 @@ const About = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">B.Voc in Telematics</h4>
                   <p className="text-gray-600 dark:text-gray-400">Dayalbagh Educational Institute (2022-2025)</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Academic Projects: Real-time chat app, e-commerce system</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Academic Projects: Real-time chat app with Socket.io, e-commerce system with React and Node.js</p>
                 </div>
               </div>
             </div>
@@ -135,7 +137,7 @@ const About = () => {
                 
                 <div className="grid grid-cols-3 gap-4">
                   <div className="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                    <WrenchIcon className="mb-2 text-gray-600 dark:text-gray-400" size={24} />
+                    <Award className="mb-2 text-gray-600 dark:text-gray-400" size={24} />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Postman</span>
                   </div>
                   
@@ -145,8 +147,8 @@ const About = () => {
                   </div>
                   
                   <div className="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                    <Cpu className="mb-2 text-gray-600 dark:text-gray-400" size={24} />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Docker</span>
+                    <FileText className="mb-2 text-gray-600 dark:text-gray-400" size={24} />
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">RESTful APIs</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">

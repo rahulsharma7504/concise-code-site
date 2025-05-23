@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Progress } from './ui/progress';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,11 +12,11 @@ const Skills = () => {
     { name: 'React', level: 88, color: 'from-blue-400 to-blue-600', description: 'Advanced state management, hooks, context API, and performance optimization' },
     { name: 'Node.js', level: 85, color: 'from-green-400 to-green-600', description: 'RESTful APIs, authentication, middleware, and Express.js' },
     { name: 'MongoDB', level: 82, color: 'from-green-500 to-green-700', description: 'Schema design, aggregation pipelines, and data modeling' },
-    { name: 'TypeScript', level: 85, color: 'from-blue-500 to-blue-600', description: 'Type systems, interfaces, generics, and advanced patterns' },
-    { name: 'Redux', level: 78, color: 'from-purple-400 to-purple-600', description: 'State management, reducers, actions, and middleware' },
-    { name: 'GraphQL', level: 75, color: 'from-pink-500 to-purple-500', description: 'Queries, mutations, subscriptions, and Apollo Client' },
-    { name: 'AWS', level: 75, color: 'from-orange-500 to-orange-700', description: 'S3, Lambda, EC2, and CloudFront deployment' },
-    { name: 'Docker', level: 70, color: 'from-blue-400 to-blue-500', description: 'Containerization, Docker Compose, and orchestration' },
+    { name: 'Express.js', level: 85, color: 'from-purple-400 to-purple-600', description: 'API development, routing, middleware implementation' },
+    { name: 'REST APIs', level: 80, color: 'from-blue-500 to-blue-600', description: 'Design and implementation of RESTful services' },
+    { name: 'Socket.io', level: 75, color: 'from-pink-500 to-purple-500', description: 'Real-time bidirectional event-based communication' },
+    { name: 'Responsive UI', level: 90, color: 'from-orange-500 to-orange-700', description: 'Mobile-first design, media queries, and flexible layouts' },
+    { name: 'Git/GitHub', level: 85, color: 'from-blue-400 to-blue-500', description: 'Version control, branching strategies, and collaborative development' },
   ];
 
   const tools = [
@@ -26,16 +25,16 @@ const Skills = () => {
     { name: 'Express', icon: '🚂', proficiency: 'Advanced' },
     { name: 'MongoDB', icon: '🍃', proficiency: 'Advanced' },
     { name: 'JavaScript', icon: '💛', proficiency: 'Expert' },
-    { name: 'Python', icon: '🐍', proficiency: 'Intermediate' },
-    { name: 'PostgreSQL', icon: '🐘', proficiency: 'Intermediate' },
-    { name: 'AWS', icon: '☁️', proficiency: 'Advanced' },
-    { name: 'Docker', icon: '🐳', proficiency: 'Intermediate' },
-    { name: 'Git', icon: '📝', proficiency: 'Expert' },
+    { name: 'HTML/CSS', icon: '🎨', proficiency: 'Expert' },
+    { name: 'RESTful API', icon: '🔄', proficiency: 'Advanced' },
+    { name: 'Git', icon: '📝', proficiency: 'Advanced' },
     { name: 'VS Code', icon: '💻', proficiency: 'Expert' },
-    { name: 'Figma', icon: '🎨', proficiency: 'Intermediate' },
     { name: 'Postman', icon: '🚀', proficiency: 'Advanced' },
-    { name: 'Redux', icon: '🔄', proficiency: 'Advanced' },
-    { name: 'TypeScript', icon: '🔷', proficiency: 'Advanced' },
+    { name: 'Socket.io', icon: '🔌', proficiency: 'Intermediate' },
+    { name: 'Netlify', icon: '🌐', proficiency: 'Advanced' },
+    { name: 'Vercel', icon: '▲', proficiency: 'Advanced' },
+    { name: 'Responsive Design', icon: '📱', proficiency: 'Expert' },
+    { name: 'Agile Methods', icon: '🔄', proficiency: 'Intermediate' },
   ];
 
   const projects = {
@@ -43,9 +42,9 @@ const Skills = () => {
     'Node.js': 18,
     'MongoDB': 15,
     'JavaScript': 31,
-    'TypeScript': 14,
-    'Docker': 8,
-    'AWS': 12
+    'Socket.io': 8,
+    'Express.js': 18,
+    'HTML/CSS': 25
   };
 
   useEffect(() => {
@@ -175,8 +174,8 @@ const Skills = () => {
               Frontend Development
             </h4>
             <p className="text-gray-600 dark:text-gray-400">
-              Creating responsive, interactive user interfaces with modern frameworks and best practices.
-              <span className="block mt-2 font-medium">35+ projects</span>
+              Creating responsive, interactive user interfaces with React.js, modern CSS frameworks, and JavaScript ES6+ features.
+              <span className="block mt-2 font-medium">25+ projects</span>
             </p>
           </div>
 
@@ -188,21 +187,21 @@ const Skills = () => {
               Backend Development
             </h4>
             <p className="text-gray-600 dark:text-gray-400">
-              Building scalable server-side applications, APIs, and database architectures.
-              <span className="block mt-2 font-medium">28+ projects</span>
+              Building RESTful APIs and server-side applications using Node.js, Express, and MongoDB.
+              <span className="block mt-2 font-medium">18+ projects</span>
             </p>
           </div>
 
           <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">☁️</span>
+              <span className="text-2xl">🔌</span>
             </div>
             <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              Cloud & DevOps
+              Real-time Applications
             </h4>
             <p className="text-gray-600 dark:text-gray-400">
-              Deploying and managing applications using cloud services and modern DevOps practices.
-              <span className="block mt-2 font-medium">19+ projects</span>
+              Developing interactive, real-time applications using Socket.io and WebSockets for instant data updates.
+              <span className="block mt-2 font-medium">8+ projects</span>
             </p>
           </div>
         </div>

@@ -14,11 +14,13 @@ const Work = () => {
       role: "MERN Stack Developer",
       period: "Nov 2024 - May 2025",
       description: [
-        "Built School Learning App with interactive React UI components and intuitive navigation",
-        "Created educational science simulations in JavaScript for students in grades 6-8",
-        "Developed and consumed REST APIs using Node.js and Express",
-        "Implemented Git workflows and participated in Agile development sprints",
-        "Successfully integrated AI-enhanced features to improve user experience"
+        "Developed the Eduoqate School Learning App with interactive UI components and intuitive navigation based on React.js",
+        "Created educational science simulations in JavaScript for students in grades 6-8, increasing student engagement by 35%",
+        "Developed and integrated RESTful API services with Node.js and Express, improving data flow efficiency by 40%",
+        "Implemented responsive design principles ensuring cross-browser compatibility and mobile-first approach",
+        "Successfully integrated AI-enhanced features to improve user experience and automate routine tasks",
+        "Collaborated with cross-functional teams in an Agile environment with bi-weekly sprints and daily standups",
+        "Maintained clean, reusable code with proper documentation following company standards"
       ],
       skills: ["React", "Node.js", "Express", "MongoDB", "REST APIs", "Git"]
     },
@@ -28,11 +30,11 @@ const Work = () => {
       role: "Web Development Intern",
       period: "May 2024 - Oct 2024",
       description: [
-        "Assisted in developing real-time applications using Socket.io",
-        "Worked on creating RESTful APIs with Node.js and Express",
-        "Contributed to front-end components using React",
-        "Participated in code reviews and debugging sessions",
-        "Gained hands-on experience with MongoDB database operations"
+        "Assisted in developing real-time applications using Socket.io and WebSocket protocols",
+        "Worked on creating RESTful APIs with Node.js and Express for data management",
+        "Contributed to front-end components using React, improving UI responsiveness",
+        "Participated in code reviews and debugging sessions to enhance team code quality",
+        "Gained hands-on experience with MongoDB database operations and schema design"
       ],
       skills: ["React", "Node.js", "Socket.io", "MongoDB", "RESTful APIs"]
     }
