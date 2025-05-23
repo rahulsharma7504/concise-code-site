@@ -1,20 +1,20 @@
 
 import React from 'react';
-import { Code, Coffee, Heart, Database, Server, Globe, Cpu, WrenchIcon, Github as GithubIcon } from 'lucide-react';
+import { Code, Coffee, Database, Server, Globe, Cpu, WrenchIcon, Github as GithubIcon, MapPin, School } from 'lucide-react';
 
 const About = () => {
   const randomStats = [
-    { label: "Projects Completed", value: "75+" },
-    { label: "Satisfied Clients", value: "42" },
-    { label: "Coffee Consumed", value: "1,259 cups" },
-    { label: "Lines of Code", value: "371K+" },
+    { label: "Projects Completed", value: "15+" },
+    { label: "Months Experience", value: "6+" },
+    { label: "Coffee Consumed", value: "459 cups" },
+    { label: "Lines of Code", value: "25K+" },
   ];
 
   const certifications = [
     "MongoDB Certified Developer",
-    "AWS Solutions Architect",
     "React Advanced Patterns",
-    "Node.js Performance Optimization"
+    "Node.js Performance",
+    "AI Engineering with OpenAI"
   ];
 
   return (
@@ -32,16 +32,21 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border-l-4 border-blue-500 hover:border-purple-500 transition-colors duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="text-blue-500" />
+                <span className="text-sm text-gray-500 dark:text-gray-400">Mathura, Uttar Pradesh, India</span>
+              </div>
+              
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                Hello! I'm John Doe, a passionate full-stack developer with over 5 years of experience 
-                creating digital solutions that make a difference. I specialize in building modern web 
-                applications using the MERN stack (MongoDB, Express.js, React, Node.js).
+                Hello! I'm Rahul Sharma, a passionate MERN stack developer with hands-on experience building 
+                scalable web applications. I specialize in React, Node, Express, and MongoDB, creating 
+                solutions that combine strong backend logic with pixel-perfect frontend UI.
               </p>
               
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                With a background in computer science and a passion for problem-solving, I've helped startups 
-                and established businesses alike launch successful digital products. My approach combines technical 
-                expertise with a deep understanding of user experience and business needs.
+                With a background in Telematics and a passion for problem-solving, I'm currently exploring 
+                AI-based projects with voice, image, and document processing capabilities. I believe in 
+                clean code, user-centered design, and continuous learning.
               </p>
 
               <div className="flex flex-wrap gap-3 mt-6">
@@ -50,6 +55,21 @@ const About = () => {
                     {cert}
                   </span>
                 ))}
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                <School size={20} className="text-blue-500" />
+                Education
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">B.Voc in Telematics</h4>
+                  <p className="text-gray-600 dark:text-gray-400">Dayalbagh Educational Institute (2022-2025)</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Academic Projects: Real-time chat app, e-commerce system</p>
+                </div>
               </div>
             </div>
 
@@ -131,7 +151,7 @@ const About = () => {
                   
                   <div className="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                     <Globe className="mb-2 text-gray-600 dark:text-gray-400" size={24} />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">AWS</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Netlify</span>
                   </div>
                   
                   <div className="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
@@ -149,7 +169,7 @@ const About = () => {
                     >
                       <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 4c.828 0 1.5.672 1.5 1.5S12.328 7 11.5 7 10 6.328 10 5.5 10.672 4 11.5 4zM14 18h-4v-1h1v-6h-1v-1h3v7h1v1z"/>
                     </svg>
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Jira</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Vercel</span>
                   </div>
                 </div>
               </div>

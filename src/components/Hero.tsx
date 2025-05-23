@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, FileText, Phone } from 'lucide-react';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -8,7 +8,7 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [hoverColor, setHoverColor] = useState('#4338ca');
 
-  const titles = ['Full Stack Developer', 'MERN Specialist', 'UI/UX Enthusiast', 'Problem Solver'];
+  const titles = ['MERN Stack Developer', 'AI Explorer', 'Clean Code Evangelist'];
   
   // Array of gradient colors to cycle through
   const gradientColors = [
@@ -81,7 +81,7 @@ const Hero = () => {
                 onMouseEnter={changeHoverColor}
                 style={{transition: "all 0.5s ease"}}
               >
-                John Doe
+                Rahul Sharma
               </span>
             </h1>
             
@@ -93,53 +93,62 @@ const Hero = () => {
             </div>
             
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Building powerful web applications with the MERN stack since 2018.
-              Over 50+ projects delivered for clients worldwide. Let's create something amazing together.
+              Passionate MERN Stack Developer from Mathura, Uttar Pradesh, with experience building scalable web apps and 
+              exploring AI-based solutions for modern challenges.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={() => scrollToSection('#contact')}
-              className={`bg-gradient-to-r ${gradientColors[currentGradient][0]} ${gradientColors[currentGradient][1]} text-white px-8 py-3 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg`}
+            <a
+              href="/resume.pdf"
+              download
+              className={`bg-gradient-to-r ${gradientColors[currentGradient][0]} ${gradientColors[currentGradient][1]} text-white px-8 py-3 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg flex items-center gap-2`}
             >
-              Get In Touch
-            </button>
+              <FileText size={18} />
+              Download Resume
+            </a>
             
             <button
               onClick={() => scrollToSection('#projects')}
-              className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transform hover:scale-105 transition-all duration-200"
+              className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transform hover:scale-105 transition-all duration-200 flex items-center gap-2"
               style={{borderColor: hoverColor, color: hoverColor}}
             >
-              View My Work
+              View Projects
             </button>
           </div>
 
           <div className="flex items-center justify-center space-x-6 pt-8">
             <a
-              href="https://github.com"
+              href="https://github.com/rahulsharma7504"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
-              style={{color: hoverColor}}
+              aria-label="GitHub"
             >
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/rahul-sharma-aa6b61247"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
-              style={{color: hoverColor}}
+              aria-label="LinkedIn"
             >
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:john@example.com"
+              href="mailto:rahul658541@gmail.com"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
-              style={{color: hoverColor}}
+              aria-label="Email"
             >
               <Mail size={24} />
+            </a>
+            <a
+              href="tel:+919997813970"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:scale-110 transition-all duration-200"
+              aria-label="Phone"
+            >
+              <Phone size={24} />
             </a>
           </div>
         </div>
@@ -148,7 +157,7 @@ const Hero = () => {
           <button
             onClick={() => scrollToSection('#about')}
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-            style={{color: hoverColor}}
+            aria-label="Scroll to About section"
           >
             <ChevronDown size={32} />
           </button>

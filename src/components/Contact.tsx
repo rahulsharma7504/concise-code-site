@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -105,10 +105,10 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
                   <a 
-                    href="mailto:john@example.com"
+                    href="mailto:rahul658541@gmail.com"
                     className="text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
-                    john@example.com
+                    rahul658541@gmail.com
                   </a>
                 </div>
               </div>
@@ -120,10 +120,10 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
                   <a 
-                    href="tel:+1234567890"
+                    href="tel:+919997813970"
                     className="text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
-                    +1 (234) 567-890
+                    +91 (999) 781-3970
                   </a>
                 </div>
               </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
                   <p className="text-lg font-medium text-gray-900 dark:text-white">
-                    San Francisco, CA
+                    Mathura, Uttar Pradesh, India
                   </p>
                 </div>
               </div>
@@ -147,37 +147,33 @@ const Contact = () => {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/rahulsharma7504"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                  className="flex items-center justify-center w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                 >
-                  <span className="text-gray-600 dark:text-gray-400">GH</span>
+                  <Github size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rahul-sharma-aa6b61247"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                  className="flex items-center justify-center w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                 >
-                  <span className="text-gray-600 dark:text-gray-400">LI</span>
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
-                >
-                  <span className="text-gray-600 dark:text-gray-400">TW</span>
+                  <Linkedin size={20} />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 relative overflow-hidden">
+            {/* Blob background for visual interest */}
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-gradient-to-br from-green-400/10 to-teal-400/10 rounded-full blur-3xl pointer-events-none"></div>
+            
             {isSubmitted ? (
-              <div className="text-center py-12">
+              <div className="text-center py-12 relative z-10">
                 <CheckCircle className="mx-auto mb-4 text-green-500" size={64} />
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   Message Sent!
@@ -187,7 +183,7 @@ const Contact = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
