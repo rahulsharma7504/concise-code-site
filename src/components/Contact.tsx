@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button"
@@ -41,7 +42,6 @@ const Contact = () => {
         toast({
           title: "Message sent successfully!",
           description: "Thanks for reaching out. I'll get back to you soon.",
-          // Fix: Change "success" to "default" which is a valid variant
           variant: "default", 
           className: "bg-green-500 text-white",
         });
