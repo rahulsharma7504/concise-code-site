@@ -9,6 +9,7 @@ import Work from '../components/Work';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { Toaster } from '../components/ui/toaster';
+import { TooltipProvider } from '../components/ui/tooltip';
 
 const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -37,17 +38,19 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Hero />
-      <About />
-      <Projects />
-      <Work />
-      <Skills />
-      <Contact />
-      <Footer />
-      <Toaster />
-    </div>
+    <TooltipProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Hero />
+        <About />
+        <Projects />
+        <Work />
+        <Skills />
+        <Contact />
+        <Footer />
+        <Toaster />
+      </div>
+    </TooltipProvider>
   );
 };
 
