@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 const Skills = () => {
@@ -34,6 +33,8 @@ const Skills = () => {
     { name: 'Netlify', icon: '🌐', proficiency: 'Advanced' },
     { name: 'Vercel', icon: '▲', proficiency: 'Advanced' },
     { name: 'Responsive Design', icon: '📱', proficiency: 'Expert' },
+    { name: 'Firebase', icon: '🔥', proficiency: 'Intermediate' },
+    { name: 'Google AI Studio', icon: '🧠', proficiency: 'Intermediate' },
     { name: 'Agile Methods', icon: '🔄', proficiency: 'Intermediate' },
   ];
 
