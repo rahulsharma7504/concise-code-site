@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -14,49 +13,70 @@ const Contact = () => {
   const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Update EmailJS initialization
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, []);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = {
-      name,
-      email,
-      message,
-      phone,
-      subject,
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    
+    if (!serviceId || !templateId) {
+      console.error('Missing configuration:', { serviceId, templateId });
+      toast({
+        title: "Configuration Error",
+        description: "EmailJS is not properly configured. Please check your environment variables.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    const templateParams = {
+      to_name: 'Rahul',
+      user_name: name,
+      user_email: email,
+      user_phone: phone,
+      user_subject: subject,
+      message: message,
     };
 
     emailjs.send(
-      'service_d4zqdm9',  // Replace with your service ID
-      'template_20evjc9', // Replace with your template ID
-      formData,
-      'ORlGlJnbbGwYpHtD0' // Replace with your public key
+      serviceId,
+      templateId,
+      templateParams
     )
-      .then(() => {
-        setName('');
-        setEmail('');
-        setMessage('');
-        setPhone('');
-        setSubject('');
-        toast({
-          title: "Message sent successfully!",
-          description: "Thanks for reaching out. I'll get back to you soon.",
-          variant: "default", 
-          className: "bg-green-500 text-white",
-        });
-      })
-      .catch((error) => {
-        console.error('Failed to send email:', error);
-        toast({
-          title: "Failed to send message",
-          description: "Please try again later or contact me directly.",
-          variant: "destructive",
-        });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setName('');
+      setEmail('');
+      setMessage('');
+      setPhone('');
+      setSubject('');
+      toast({
+        title: "Message sent successfully!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+        variant: "default", 
+        className: "bg-green-500 text-white",
       });
+    })
+    .catch((error) => {
+      console.error('FAILED...', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please ensure all template variables match your EmailJS template configuration.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+    });
   };
 
   return (

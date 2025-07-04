@@ -9,13 +9,13 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Eduoqate",
-      description: "A comprehensive school learning & management system built with the MERN stack.",
-      longDescription: "Eduoqate is a comprehensive school learning and management system designed to streamline educational processes. The platform features robust admissions handling, detailed course management, and intuitive dashboards for students, teachers, and administrators. Built with React for the frontend and Node.js/Express for the backend, with MongoDB as the database.",
+      title: "Car-Dealership/Selling Management System",
+      description: "A comprehensive car dealership management system built with the MERN stack.",
+      longDescription: "This Car-Dealership Management System is designed to streamline the operations of car dealerships. The platform features robust inventory management, detailed sales tracking, and intuitive dashboards for sales representatives and managers. Built with React for the frontend and Node.js/Express for the backend, with MongoDB as the database.",
       techStack: ["React", "Node.js", "MongoDB", "Express", "Redux", "JWT"],
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop",
-      github: "https://github.com/rahulsharma7504/eduoqate",
-      demo: "https://edooqate.in",
+      image: "https://images.unsplash.com/photo-1621359210173-69f6507324b4?q=80&w=564&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      github: "https://github.com/rahulsharma7504/Car_Sell_Client",
+      demo: "https://car-sell-client.onrender.com",
       category: "mern"
     },
     {
@@ -47,8 +47,8 @@ const Projects = () => {
       longDescription: "This e-commerce system was developed as part of an academic project to demonstrate comprehensive online retail functionality. The application includes product catalog management, advanced search and filtering, shopping cart functionality, secure payment processing, and order tracking features. The admin panel provides inventory management and sales reporting.",
       techStack: ["React", "Node.js", "MongoDB", "Express", "Stripe API"],
       image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=600&fit=crop",
-      github: "https://github.com/rahulsharma7504/ecommerce",
-      demo: "https://e-commerce-demo.vercel.app",
+      github: "https://github.com/rahulsharma7504/E-commerce-Project",
+      demo: "https://e-commerce-project-client-side.onrender.com",
       category: "mern"
     },
     {
