@@ -24,9 +24,9 @@ const Projects = () => {
       description: "Multimodal AI assistant with PDF chat, text-to-speech, and AI image generation capabilities.",
       longDescription: "NeuroAssist AI is an advanced multimodal assistant that leverages AI to provide intelligent interactions across different types of content. The application features PDF document chat functionality, high-quality text-to-speech conversion, and AI-powered image generation. Currently being expanded to incorporate voice input capabilities, long-term memory, and comprehensive analytics.",
       techStack: ["React", "Node.js", "OpenAI API", "MongoDB", "TensorFlow.js"],
-      image: "https://images.unsplash.com/photo-1677442135888-422ab3b46176?w=800&h=600&fit=crop",
-      github: "https://github.com/rahulsharma7504/neuroassist",
-      demo: "https://neuroassist-demo.vercel.app",
+      image: "https://plus.unsplash.com/premium_photo-1714618951275-9acb91c4bccd?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      github: "https://github.com/rahulsharma7504/Ai_APP_Client",
+      demo: "https://ai-saas-app-olive.vercel.app/login",
       category: "ai"
     },
     {
