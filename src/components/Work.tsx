@@ -26,17 +26,20 @@ const Work = () => {
     },
     {
       id: 1,
-      company: "Utkranti Software",
-      role: "Web Development Intern",
-      period: "May 2024 - Oct 2024",
+      company: "Arema Technologies",
+      role: "Web Developer",
+      period: "11 July 2025  - 6 Oct 2025",
       description: [
-        "Assisted in developing real-time applications using Socket.io and WebSocket protocols",
-        "Worked on creating RESTful APIs with Node.js and Express for data management",
-        "Contributed to front-end components using React, improving UI responsiveness",
-        "Participated in code reviews and debugging sessions to enhance team code quality",
-        "Gained hands-on experience with MongoDB database operations and schema design"
+        "Assisted in developing real - time applications using Socket.io and WebSocket protocols.",
+        "Built and optimized RESTful APIs with Node.js and Express.js for efficient data management.",
+
+        "Contributed to front - end components using React.js, improving UI responsiveness and user experience.",
+
+        "Participated in code reviews and debugging sessions to enhance overall code quality and performance.",
+
+        "Gained hands - on experience with MongoDB for database operations, schema design, and data modeling."
       ],
-      skills: ["React", "Node.js", "Socket.io", "MongoDB", "RESTful APIs"]
+      skills: ["React", "Node.js", "Socket.io", "MySQL", "RESTful APIs", "BitBucket", "Live Server"]
     }
   ];
 
@@ -81,11 +84,10 @@ const Work = () => {
                 <button
                   key={exp.id}
                   onClick={() => setActiveExperience(index)}
-                  className={`flex items-center gap-2 px-4 py-3 rounded-lg whitespace-nowrap transition-all duration-300 ${
-                    activeExperience === index
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-3 rounded-lg whitespace-nowrap transition-all duration-300 ${activeExperience === index
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    }`}
                 >
                   <Briefcase size={18} />
                   <span className="font-medium">{exp.company}</span>
@@ -99,11 +101,10 @@ const Work = () => {
             {experiences.map((experience, index) => (
               <div
                 key={experience.id}
-                className={`transition-all duration-500 ${
-                  activeExperience === index 
-                    ? 'opacity-100 block' 
-                    : 'opacity-0 hidden'
-                }`}
+                className={`transition-all duration-500 ${activeExperience === index
+                  ? 'opacity-100 block'
+                  : 'opacity-0 hidden'
+                  }`}
               >
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{experience.role}</h3>
@@ -115,11 +116,10 @@ const Work = () => {
 
                 <ul className="space-y-4 mb-6">
                   {experience.description.map((item, i) => (
-                    <li 
-                      key={i} 
-                      className={`flex items-start gap-3 ${
-                        isVisible ? 'animate-fade-in' : 'opacity-0'
-                      }`}
+                    <li
+                      key={i}
+                      className={`flex items-start gap-3 ${isVisible ? 'animate-fade-in' : 'opacity-0'
+                        }`}
                       style={{ animationDelay: `${i * 150}ms` }}
                     >
                       <ChevronRight size={18} className="text-blue-500 mt-1 flex-shrink-0" />
@@ -132,8 +132,8 @@ const Work = () => {
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Technologies used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {experience.skills.map((skill, i) => (
-                      <span 
-                        key={i} 
+                      <span
+                        key={i}
                         className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm"
                       >
                         {skill}

@@ -7,19 +7,9 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
   const projects = [
+
     {
       id: 1,
-      title: "Car-Dealership/Selling Management System",
-      description: "A comprehensive car dealership management system built with the MERN stack.",
-      longDescription: "This Car-Dealership Management System is designed to streamline the operations of car dealerships. The platform features robust inventory management, detailed sales tracking, and intuitive dashboards for sales representatives and managers. Built with React for the frontend and Node.js/Express for the backend, with MongoDB as the database.",
-      techStack: ["React", "Node.js", "MongoDB", "Express", "Redux", "JWT"],
-      image: "https://images.unsplash.com/photo-1621359210173-69f6507324b4?q=80&w=564&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      github: "https://github.com/rahulsharma7504/Car_Sell_Client",
-      demo: "https://car-sell-client.onrender.com",
-      category: "mern"
-    },
-    {
-      id: 2,
       title: "NeuroAssist AI",
       description: "Multimodal AI assistant with PDF chat, text-to-speech, and AI image generation capabilities.",
       longDescription: "NeuroAssist AI is an advanced multimodal assistant that leverages AI to provide intelligent interactions across different types of content. The application features PDF document chat functionality, high-quality text-to-speech conversion, and AI-powered image generation. Currently being expanded to incorporate voice input capabilities, long-term memory, and comprehensive analytics.",
@@ -29,19 +19,9 @@ const Projects = () => {
       demo: "https://ai-saas-app-olive.vercel.app/login",
       category: "ai"
     },
+
     {
-      id: 3,
-      title: "Real-time Chat Application",
-      description: "Academic project featuring real-time messaging, user authentication, and channel functionality.",
-      longDescription: "Developed as an academic project, this real-time chat application enables instant messaging between users in a secure environment. Features include user authentication, profile customization, channel creation, and private messaging. The application uses Socket.io for real-time capabilities and MongoDB for message persistence.",
-      techStack: ["React", "Node.js", "Socket.io", "Express", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=800&h=600&fit=crop",
-      github: "https://github.com/rahulsharma7504/chat-app",
-      demo: "https://chat-app-demo.netlify.app",
-      category: "mern"
-    },
-    {
-      id: 4,
+      id: 2,
       title: "E-Commerce System",
       description: "Full-featured e-commerce platform with shopping cart, payment processing, and order management.",
       longDescription: "This e-commerce system was developed as part of an academic project to demonstrate comprehensive online retail functionality. The application includes product catalog management, advanced search and filtering, shopping cart functionality, secure payment processing, and order tracking features. The admin panel provides inventory management and sales reporting.",
@@ -52,16 +32,56 @@ const Projects = () => {
       category: "mern"
     },
     {
-      id: 5,
-      title: "School Learning App",
-      description: "Interactive learning platform for K-12 students with science simulations and educational content.",
-      longDescription: "Built during professional tenure at Hankernest Technologies, this educational application provides an engaging learning environment for K-12 students. The platform features interactive science simulations for grades 6-8, curriculum-aligned educational content, progress tracking, and performance analytics. The application incorporates AI-enhanced features to personalize the learning experience.",
-      techStack: ["React", "JavaScript", "CSS3", "REST APIs", "TensorFlow.js"],
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
-      github: "https://github.com/rahulsharma7504/learning-app",
-      demo: "https://school-learning-demo.netlify.app",
-      category: "frontend"
+      id: 3,
+      title: "Mitra_Tenders",
+      description: "Platform for discovering latest government tenders in India, managing procurement workflows, and bidding efficiently.",
+      longDescription: "MitraTender is designed for businesses, contractors, and suppliers to easily find government tenders by location, ministry, category, and keywords. It offers a personal dashboard for tracking tenders and bids, detailed tender information including items and documents, smart filters, alerts, and secure login features. The platform aims to save time with fast and accurate tender search and supports startups, SMEs, and enterprises to grow through government procurement.",
+      techStack: ["HTML, CSS, Bootstrap", "Node.js", "MySQL", "Express", "Razorpay Payments"],
+      image: "https://www.investopedia.com/thmb/aG30olOSxT0rkU4LEYWK29oIMdA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tenderoffer.asp-Final-876bd37ec4774298830d3f495baefbbd.png",
+      demo: "https://mitratender.com/index.php?page=pricing",
+      category: "mern",
+      additionalDetails: {
+        pricingPage: "Unable to fetch specific pricing details from the pricing page at mitratender.com, but generally the platform may offer subscription or pay-per-bid models for tender access.",
+        targetUsers: "Startups, SMEs, Enterprises involved in government procurement.",
+        keyFeatures: [
+          "Tender search by state, city, ministry, or category",
+          "Dashboard to track active tenders and bids",
+          "Tender details with documents and locations",
+          "Smart filters and alerts",
+          "Secure login with OTP and device validation"
+        ],
+        purpose: "To streamline government tender discovery and bidding for businesses across India."
+      }
+    },
+    {
+      id: 4,
+      title: "Opas_Trips",
+      description: "Opas Trips is an all-in-one travel app that makes travel easy, exciting, and memorable. It offers booking for flights, hotels, villas, holiday packages, visas, and travel insurance all in one place.",
+      longDescription: "Opas Trips provides an integrated platform for booking flights, hotels, villas, holiday packages, visa services, and travel insurance with real-time updates and secure payment options. The app features personalized trip recommendations, instant confirmations, flexible payment options, AI-powered travel planning, and timely notifications for bookings and flight statuses. Suitable for families, couples, solo travelers, and business travelers, it ensures a stress-free travel experience with trusted partners and 24/7 customer support.",
+      techStack: ["React Native", "Node.js", "MongoDB", "Express", "Razorpay API"],
+      image: "https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png",
+      github: null,
+      demo: "https://play.google.com/store/apps/details?id=com.otrips.app&hl=en",
+      category: "travel",
+      additionalDetails: {
+        keyFeatures: [
+          "Flight, hotel, and villa booking with advanced search filters and instant confirmation",
+          "Holiday packages including family, honeymoon, and adventure trips",
+          "Visa application tracking and travel insurance comparison",
+          "Real-time booking status updates and notifications",
+          "AI-based trip recommendations and map integration for nearby attractions",
+          "Secure payments through Razorpay with SSL encryption",
+          "24/7 customer support and verified partners",
+          "Designed for families, couples, solo travelers, and business travelers"
+        ],
+        purpose: "To simplify and enhance every journey by providing a seamless travel booking and planning experience.",
+        targetUsers: "Travelers seeking a comprehensive, easy-to-use travel app for booking and managing trips."
+      }
     }
+
+
+
+
   ];
 
   const filterCategories = [
@@ -71,8 +91,8 @@ const Projects = () => {
     { id: "frontend", label: "Frontend" }
   ];
 
-  const filteredProjects = activeFilter === "all" 
-    ? projects 
+  const filteredProjects = activeFilter === "all"
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   const openModal = (projectId: number) => {
@@ -97,18 +117,17 @@ const Projects = () => {
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             A showcase of my recent work and personal projects
           </p>
-          
+
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-2 mt-8">
             {filterCategories.map(category => (
               <button
                 key={category.id}
                 onClick={() => setActiveFilter(category.id)}
-                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${
-                  activeFilter === category.id 
-                    ? 'bg-blue-600 text-white' 
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                }`}
+                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${activeFilter === category.id
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  }`}
               >
                 {category.label}
               </button>
@@ -133,7 +152,7 @@ const Projects = () => {
                   <span className="text-white font-semibold">View Details</span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {project.title}
@@ -141,7 +160,7 @@ const Projects = () => {
                 <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.techStack.slice(0, 3).map((tech) => (
                     <span
@@ -183,16 +202,16 @@ const Projects = () => {
                 <X size={24} />
               </button>
             </div>
-            
+
             <div className="p-8">
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                 {selectedProjectData.title}
               </h3>
-              
+
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 {selectedProjectData.longDescription}
               </p>
-              
+
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                   Technologies Used
@@ -208,7 +227,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href={selectedProjectData.github}
